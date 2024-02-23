@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parking Availability</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .parking-table {
+            width: 80%;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+            padding: 20px 0;
+            margin: 0;
+            border-bottom: 1px solid #ccc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="parking-table">
+        <h2>Parking Availability</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Slot Number</th>
+                    <th>Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for slot in parking_slots %}
+                <tr>
+                    <td>{{ slot.slot_number }}</td>
+                    <td>{{ slot.availability }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
